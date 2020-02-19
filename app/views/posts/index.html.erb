@@ -1,0 +1,11 @@
+<br>
+<br>
+<br>
+
+<h1 style='text-align: center'>Posts</h1>
+
+<div class='buttons'>
+  <%= button_to 'Inline Editor', new_post_path(template: :inline), class: 'button', method: :get %>
+  <%= button_to 'Balloon Editor', new_post_path(template: :balloon), class: 'button', method: :get %>
+  <%= button_to 'Classic Editor', new_post_path(template: :classic), class: 'button', method: :get %>
+</div>
