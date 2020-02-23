@@ -1,8 +1,16 @@
+<%= content_for :js do %>
+  <%= javascript_include_tag 'app' %>
+  <%= javascript_include_tag 'new_ckeditor/balloon/ckeditor' %>
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
+<h1 style='color: red'>Post Viewer & Editor - <%= link_to 'VIEW FINAL PAGE', public_page_post_path(@post) %></h1>
+
+<hr>
+
 <p>
-  <strong>Content:</strong>
-  <%= @post.content %>
+  <%= ckeditor_tag :contentxxxx, @post.content, editor: { template: :balloon, type: :balloon, js: "sendData('#{update_inline_post_path(@post)}', editorHiddenField.value)" } %>
 </p>
 
 <% if @post.template == 'classic' %>

@@ -11,5 +11,18 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require new_ckeditor/ckeditor.css
  *= require_self
  */
+
+body {
+  background: #eee;
+  padding: 20px 50px;
+}
+
+#container {
+  padding: 10px 20px;
+  background: white;
+  max-width: 900px;
+  margin: 0 auto;
+}

@@ -1,6 +1,31 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
+  def update_inline
+    @post = Post.where(uuid: params[:id]).first
+    @post.update(content: params[:content])
+    head :ok
+  end
+
+  def upload
+    @attachment = Attachment.new(file: params[:upload])
+    if @attachment.save
+      render json: {
+        url: @attachment.file.url
+      }
+    else
+      render json: {
+        "error": {
+          "message": "The image upload failed. Error: #{@attachment.errors.full_messages.join(', ')}"
+        }
+      }
+    end
+  end
+
+  def public_page
+    @post = Post.where(uuid: params[:id]).first
+  end
+
   # GET /posts
   # GET /posts.json
   def index

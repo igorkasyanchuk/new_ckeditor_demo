@@ -52,3 +52,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'pg'
+
+gem 'new_ckeditor', path: '../new_ckeditor'
+
+gem 'pry'
+
+gem 'carrierwave'
