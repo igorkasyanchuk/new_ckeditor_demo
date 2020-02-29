@@ -53,7 +53,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'pg'
 
-gem 'new_ckeditor', path: '../new_ckeditor'
+#gem 'new_ckeditor', path: '../new_ckeditor'
+gem 'new_ckeditor', '0.1.0'
 
 gem 'pry'
 
