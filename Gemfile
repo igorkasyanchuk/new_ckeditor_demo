@@ -59,4 +59,5 @@ gem 'new_ckeditor', '0.1.0'
 gem 'pry'
 
 gem 'carrierwave'
-gem "fog-aws"
+gem 'carrierwave-aws'
+gem 'aws-sdk', '~> 3'
