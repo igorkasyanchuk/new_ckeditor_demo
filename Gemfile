@@ -58,3 +58,4 @@ gem 'new_ckeditor', path: '../new_ckeditor'
 gem 'pry'
 
 gem 'carrierwave'
+gem "fog-aws"
