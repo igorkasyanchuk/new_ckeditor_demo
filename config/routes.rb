@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     end
     collection do
       post :upload
+      post :inline
+      post :balloon
+      post :classic
     end
   end
   root to: 'posts#index'

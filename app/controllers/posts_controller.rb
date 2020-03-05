@@ -37,9 +37,24 @@ class PostsController < ApplicationController
   def show
   end
 
+  def inline
+    @post = Post.with_template('inline')
+    redirect_to @post
+  end
+
+  def classic
+    @post = Post.with_template('classic')
+    redirect_to [:edit, @post]
+  end
+
+  def balloon
+    @post = Post.with_template('balloon')
+    redirect_to @post
+  end
+
   # GET /posts/new
   def new
-    @post = Post.with_template(params[:template])
+    @post = Post.with_template("classic")
     if @post.template == "classic"
       redirect_to [:edit, @post]
     else

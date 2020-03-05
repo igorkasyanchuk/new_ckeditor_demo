@@ -1,19 +1,47 @@
-<%= content_for :js do %>
-  <%= javascript_include_tag 'app' %>
-  <%= javascript_include_tag 'new_ckeditor/balloon/ckeditor' %>
+<% if @post.template == 'balloon' %>
+
+  <%= content_for :js do %>
+    <%= javascript_include_tag 'app' %>
+    <%= javascript_include_tag 'new_ckeditor/balloon/ckeditor' %>
+  <% end %>
+
+  <p id="notice"><%= notice %></p>
+
+  <h1 style='color: red'>Post Viewer & Editor - <%= link_to 'VIEW FINAL PAGE', public_page_post_path(@post) %></h1>
+  <small>(click in editor to start editing)</small>
+
+  <hr>
+
+  <p>
+    <%= ckeditor_tag :contentxxxx, @post.content, editor: { template: :balloon, type: :balloon, js: "sendData('#{update_inline_post_path(@post)}', editorHiddenField.value)" } %>
+  </p>
+
+<% elsif @post.template == 'inline' %>
+
+  <%= content_for :js do %>
+    <%= javascript_include_tag 'app' %>
+    <%= javascript_include_tag 'new_ckeditor/inline/ckeditor' %>
+  <% end %>
+
+  <p id="notice"><%= notice %></p>
+
+  <h1 style='color: red'>Post Viewer & Editor - <%= link_to 'VIEW FINAL PAGE', public_page_post_path(@post) %></h1>
+  <small>(click in editor to start editing)</small>
+
+  <hr>
+
+  <p>
+    <%= ckeditor_tag :contentxxxx, @post.content, editor: { template: :inline, type: :inline, js: "sendData('#{update_inline_post_path(@post)}', editorHiddenField.value)" } %>
+  </p>
+
+
+<% else %>
+
 <% end %>
 
-<p id="notice"><%= notice %></p>
-
-<h1 style='color: red'>Post Viewer & Editor - <%= link_to 'VIEW FINAL PAGE', public_page_post_path(@post) %></h1>
-
-<hr>
-
-<p>
-  <%= ckeditor_tag :contentxxxx, @post.content, editor: { template: :balloon, type: :balloon, js: "sendData('#{update_inline_post_path(@post)}', editorHiddenField.value)" } %>
-</p>
 
 <% if @post.template == 'classic' %>
   <%= link_to 'Edit', edit_post_path(@post) %> |
 <% end %>
 <%= link_to 'Back', posts_path %>
+
