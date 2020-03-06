@@ -7,10 +7,10 @@
 <p style='text-align: center'>for demo click on button, it will create post with content which you can edit</p>
 
 <div class='buttons'>
-  <%= button_to 'Inline Editor', inline_posts_path, class: 'button', data: { method: :get } %>
-  <%= button_to 'Balloon Editor', balloon_posts_path, class: 'button', data: { method: :get } %>
-  <%= button_to 'Classic Editor', classic_posts_path, class: 'button', data: { method: :get } %>
-  <%= button_to 'Classic Editor (simple form)', classic_simple_form_posts_path, class: 'button', data: { method: :get } %>
+  <%= button_to 'Inline Editor', inline_posts_path, method: :post, class: 'button' %>
+  <%= button_to 'Balloon Editor', balloon_posts_path, method: :post, class: 'button' %>
+  <%= button_to 'Classic Editor', classic_posts_path, method: :post, class: 'button' %>
+  <%= button_to 'Classic Editor (simple form)', classic_simple_form_posts_path, method: :post, class: 'button' %>
 </div>
 
 <br>
