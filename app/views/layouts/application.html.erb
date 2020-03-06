@@ -10,11 +10,49 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <div style='text-align: center;'>
-      <h3><%= link_to 'source code of this demo', 'https://github.com/igorkasyanchuk/new_ckeditor_demo', target: '_blank', style: 'color: green;' %></h3>
     </div>
     <div id='container'>
+      <%= link_to '/HOME', root_path %>
       <%= yield %>
     </div>
+    <br/>
+    <div style='text-align: center;'>
+      <h3>
+        <%= image_tag 'github.png', size: '24x24' %>
+        <%= link_to 'https://github.com/igorkasyanchuk/new_ckeditor_demo', target: '_blank', style: 'color: green; font-size: 18px' do %>
+          the source code of demo
+        <% end %>
+      </h3>
+      <br/>
+      <p>my other gems and demos placed in this app:</p>
+      <h3>
+        <%= image_tag 'github.png', size: '24x24' %>
+        <%= link_to '/rails/performance', target: '_blank', style: 'color: green; font-size: 18px' do %>
+          rails_performance DEMO
+        <% end %>
+        &nbsp;
+        <%= link_to '(gem on github)', 'https://github.com/igorkasyanchuk/rails_performance', target: '_blank' %>
+      </h3>
+
+      <h3>
+        <%= image_tag 'github.png', size: '24x24' %>
+        <%= link_to '/demo_api', target: '_blank', style: 'color: green; font-size: 18px' do %>
+          fake_api DEMO
+        <% end %>
+        &nbsp;
+        <%= link_to '(gem on github)', 'https://github.com/igorkasyanchuk/fake_api', target: '_blank' %>
+      </h3>
+
+      <h3>
+        <%= image_tag 'github.png', size: '24x24' %>
+        &nbsp;
+        <%= link_to 'any_login (gem on github)', 'https://github.com/igorkasyanchuk/any_login', target: '_blank', style: 'color: green; font-size: 18px' %>
+      </h3>
+
+      <h3>
+        <%= image_tag 'github.png', size: '24x24' %>
+        &nbsp;
+        <%= link_to 'rails_db (gem on github)', 'https://github.com/igorkasyanchuk/rails_db', target: '_blank', style: 'color: green; font-size: 18px' %>
+      </h3>
   </body>
 </html>
