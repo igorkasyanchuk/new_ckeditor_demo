@@ -1,0 +1,45 @@
+<h2>Fake API gem samples</h2>
+
+<p>Simple way to prototype API, return realistic data using Faker</p>
+
+<code>
+  <pre>
+    factory(:user) do
+      {
+        id: rand(100),
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.first_name,
+        avatar_url: Faker::Avatar.image(size: '128x128')
+      }
+    end
+
+    factory(:project) do
+      {
+        id: rand(1_000),
+        title: Faker::Company.name,
+        description: Faker::Company.catch_phrase,
+        type: Faker::Company.type,
+        author: object(:user)
+      }
+    end
+
+    get('/projects').and_return           { create_list(:project, 5) }.with_status(202).with_headers({TOKEN: "SECRET"})
+
+    get(%r{\/projects\/\d+$})
+      .and_return { object(:project) }
+      .with_cookies({x: "A"})
+      .with_session({y: "B"})
+      .with_headers({token: "C"})
+  </pre>
+</code>
+
+<%= button_to 'GET EXAMPLE 1 (JSON)', '/api/projects.json', method: :get, target: '_blank' %>
+<br>
+<%= button_to 'GET EXAMPLE 1 (XML)', '/api/projects.xml', method: :get, target: '_blank' %>
+
+<br>
+<br>
+
+<%= button_to 'GET EXAMPLE 2 (JSON)', '/api/projects/1.json', method: :get, target: '_blank' %>
+<br>
+<%= button_to 'GET EXAMPLE 2 (XML)', '/api/projects/5.xml', method: :get, target: '_blank' %>

@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  mount FakeApi::Engine => '/api'
+
+  get '/demo_api', to: 'posts#demo_api'
+
   resources :posts do
     member do
       put :update_inline
