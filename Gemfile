@@ -67,6 +67,7 @@ gem 'carrierwave-aws'
 gem 'simple_form'
 
 gem 'sidekiq' # for rails_performance gem
+gem 'sidekiq-scheduler' # for rails_performance gem
 
 # My other gems
 
