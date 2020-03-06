@@ -65,3 +65,10 @@ gem 'aws-sdk-s3'
 gem 'carrierwave'
 gem 'carrierwave-aws'
 gem 'simple_form'
+
+gem 'sidekiq' # for rails_performance gem
+
+# My other gems
+
+gem 'rails_performance'
+gem 'fake_api'
