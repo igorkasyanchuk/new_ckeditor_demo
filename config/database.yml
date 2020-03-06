@@ -9,12 +9,14 @@ default: &default
 
 development:
   <<: *default
-  database: new_ckeditor_demo
+  adapter: sqlite3
+  database: db/development.sqlite3 
 
 test:
   <<: *default
-  database: new_ckeditor_demo_test<%= ENV['TEST_ENV_NUMBER'] %> 
+  adapter: sqlite3
+  database: db/test.sqlite3 
 
-production:
+  production:
   <<: *default
   database: new_ckeditor_demo

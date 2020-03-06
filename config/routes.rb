@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       post :inline
       post :balloon
       post :classic
+      post :classic_simple_form
     end
   end
   root to: 'posts#index'

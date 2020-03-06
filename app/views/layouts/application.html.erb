@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NewCkeditorDemo</title>
+    <title>CKEditor 5 + Ruby Rails Demo + File Upload</title>
+    <meta name="description" content="ruby on rails + ckeditor 5 + file upload demo" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= yield :js %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <div style='text-align: center;'>
+      <h3><%= link_to 'source code of this demo', 'https://github.com/igorkasyanchuk/new_ckeditor_demo', target: '_blank', style: 'color: green;' %></h3>
+    </div>
     <div id='container'>
       <%= yield %>
     </div>

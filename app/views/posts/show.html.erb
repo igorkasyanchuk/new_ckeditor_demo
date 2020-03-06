@@ -1,8 +1,8 @@
 <% if @post.template == 'balloon' %>
 
   <%= content_for :js do %>
-    <%= javascript_include_tag 'app' %>
-    <%= javascript_include_tag 'new_ckeditor/balloon/ckeditor' %>
+    <%= javascript_include_tag 'app', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'new_ckeditor/balloon/ckeditor', 'data-turbolinks-track': 'reload' %>
   <% end %>
 
   <p id="notice"><%= notice %></p>
@@ -19,8 +19,8 @@
 <% elsif @post.template == 'inline' %>
 
   <%= content_for :js do %>
-    <%= javascript_include_tag 'app' %>
-    <%= javascript_include_tag 'new_ckeditor/inline/ckeditor' %>
+    <%= javascript_include_tag 'app', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'new_ckeditor/inline/ckeditor', 'data-turbolinks-track': 'reload' %>
   <% end %>
 
   <p id="notice"><%= notice %></p>
@@ -36,6 +36,13 @@
 
 
 <% else %>
+  <h1>Content from the editor (<%= @post.template %>)</h1>
+
+  <hr/>
+
+  <div class="ck-content">
+    <%= raw @post.content %>
+  </div>
 
 <% end %>
 

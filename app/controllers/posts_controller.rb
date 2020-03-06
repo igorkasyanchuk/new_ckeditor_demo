@@ -47,6 +47,11 @@ class PostsController < ApplicationController
     redirect_to [:edit, @post]
   end
 
+  def classic_simple_form
+    @post = Post.with_template('classic_simple_form')
+    redirect_to [:edit, @post]
+  end
+
   def balloon
     @post = Post.with_template('balloon')
     redirect_to @post
@@ -55,7 +60,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.with_template("classic")
-    if @post.template == "classic"
+    if @post.template =~ /classic/
       redirect_to [:edit, @post]
     else
       redirect_to @post
