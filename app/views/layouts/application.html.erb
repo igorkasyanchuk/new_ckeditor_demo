@@ -10,12 +10,16 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    </div>
+    <div style='text-align: center;'>CKEditor 5 + Ruby Rails</div>
+    <br/>
+
     <div id='container'>
       <%= link_to '/HOME', root_path %>
       <%= yield %>
     </div>
+
     <br/>
+
     <div style='text-align: center;'>
       <h3>
         <%= image_tag 'github.png', size: '24x24' %>
@@ -54,5 +58,6 @@
         &nbsp;
         <%= link_to 'rails_db (gem on github)', 'https://github.com/igorkasyanchuk/rails_db', target: '_blank', style: 'color: green; font-size: 18px' %>
       </h3>
+    </div>
   </body>
 </html>
