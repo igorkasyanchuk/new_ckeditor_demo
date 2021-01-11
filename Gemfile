@@ -73,3 +73,5 @@ gem 'sidekiq-scheduler' # for rails_performance gem
 
 gem 'rails_performance'
 gem 'fake_api'
+
+gem 'sweet_staging'
